@@ -1,0 +1,43 @@
+##########################Remote Server OS Installation#######################
+
+Remote Server OS Installation:
+These remote activity done by site engineer
+*Rack the server hardware
+*Connect power cable
+*connect network cable and IDRAC(Integrated Dell Remote Access Controller).iDRAC allows IT administrators to monitor, manage, update, troubleshoot, and remediate Dell servers from any location without the use of agents and out-of-band.
+
+*Setup IDRAC(static IP Address)
+go to IDRAC(Integrated Dell Remote Access Controller)and go to configuration
+
+Configuration---->virtual console---->virtual media--->Map Removable Disk---->image file---> browse or Map image for installation
+After selecting the  iso file your virtual media will show ISO file is connected and you are ready to install OS
+
+
+5.Booting process:
+Linux Boot Steps
+After pressing power button--->POST(Power on self Start) will start and all hardware ready to power on--->BIOS(Basic Input Output ) all device will be loaded-->MBR(Master Boot Record) identifies how and where the system's operating system (OS) is located in order to be booted (loaded) into the computer's main storage or random access memory (RAM)--->GRUB(Grand Unified Bootloader) is a bootloader and boot manager for Linux and other Unix-based OSes.Once OS loaded, GRUB takes control of the system and loads the Linux kernel-->Kernel,responsible for managing your system resources, running processes, and communicating with the hardware---->Systemd,Controlling startup options,Systemd is used to manage system settings and services. systemd organizes tasks into components called units and groups of units into targets.--->targets help your computer know what it should be doing at any given time.
+
+ 
+
+7.Subscription manager & Updating Linux packages:
+
+# subscription-manager register
+
+Username:dipu
+password:123456
+The system is registered with ID
+# subscription-manager attach --auto
+Installed Product current status
+Product name:Red hat
+status: subscribed
+## subscription-manager list --available
+>pool id
+
+# subscription-manager attach --pool=pool id
+successfully attach a subscription for: 30 days Red Hat Enterprise
+#subscription-manager list
+#yum repolist
+repos id
+#subscription-manager repos --enable=repos id
+#yum update -y
+#yum makecache
